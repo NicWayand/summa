@@ -259,7 +259,7 @@ contains
     newSnowDensity = min(150._dp,newSnowDenMin + newSnowDenMult*exp((airtemp-Tfreeze)/newSnowDenScal))  ! new snow density (kg m-3)
    ! Pahaut 1976 (Boone et al. 2002)
    case(pahaut_76)
-    newSnowDensity = max(newSnowDenMin,a_sn + (b_sn * (airtemp-Tfreeze))+(c_sn*((windspd)**0.5_dp))); ! new snow density (kg m-3)
+    newSnowDensity = max(50._dp,a_sn + (b_sn * (airtemp-Tfreeze))+(c_sn*((windspd)**0.5_dp))); ! new snow density (kg m-3)
    ! Anderson 1976 
    case(anderson) 
     if(airtemp>(Tfreeze+2._dp))then
